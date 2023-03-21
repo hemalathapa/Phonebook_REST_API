@@ -26,6 +26,10 @@ public class Persons
     @JoinColumn(name = "person_id",referencedColumnName = "id")
     private List<Mobile> mobiles;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "person_id",referencedColumnName = "id")
+    private List<Address> address;
+
     public Persons(String fname,String lname)
     {
         this.fname=fname;

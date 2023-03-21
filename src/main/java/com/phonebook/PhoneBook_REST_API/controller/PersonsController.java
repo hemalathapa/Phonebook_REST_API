@@ -31,11 +31,16 @@ public class PersonsController
 
     }
 
-
     @PostMapping("/NewContact")
     public Persons NewContact(@RequestBody Contact contact)
     {
         return personsRepository.save(contact.getPersons());
+    }
+
+    @PutMapping("Update/{id}")
+    private Persons update(@PathVariable int id, @RequestBody Persons persons){
+        persons.setId(id);
+        return personsService.Update(persons);
     }
 
     @DeleteMapping("/delete/{id}")
@@ -51,11 +56,17 @@ public class PersonsController
     }
 
 
-    @PutMapping("Update/{id}")
-    private Persons update(@PathVariable int id, @RequestBody Persons persons){
-        persons.setId(id);
-        return personsService.Update(persons);
-    }
+
+
+
+
+
+
+
+
+
+
+
 /*
     @PutMapping("UpdateByName/{id}")
     private Persons updateByName(@PathVariable String fname,@PathVariable String lname, @RequestBody Persons persons){
