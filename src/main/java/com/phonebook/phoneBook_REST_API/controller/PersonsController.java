@@ -1,11 +1,10 @@
-package com.phonebook.PhoneBook_REST_API.controller;
+package com.phonebook.phoneBook_REST_API.controller;
 
-import com.phonebook.PhoneBook_REST_API.dto.Contact;
-import com.phonebook.PhoneBook_REST_API.model.Persons;
-import com.phonebook.PhoneBook_REST_API.repository.PersonsRepository;
-import com.phonebook.PhoneBook_REST_API.service.PersonsService;
+import com.phonebook.phoneBook_REST_API.dto.Contact;
+import com.phonebook.phoneBook_REST_API.model.Persons;
+import com.phonebook.phoneBook_REST_API.repository.PersonsRepository;
+import com.phonebook.phoneBook_REST_API.service.PersonsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,25 +19,25 @@ public class PersonsController
     private PersonsService personsService;
 
     @GetMapping
-    private List<Persons> getAll(){
+    public List<Persons> getAll(){
         return  personsService.getAll();
     }
 
     @GetMapping("/fname/{fname}")
-    public ResponseEntity<List<Persons>> getContactByFirstName(@PathVariable String fname)
+    public List<Persons> getContactByFirstName(@PathVariable String fname)
     {
         return personsService.getContactByFirstName(fname);
 
     }
 
     @PostMapping("/NewContact")
-    public Persons NewContact(@RequestBody Contact contact)
+    public Persons newContact(@RequestBody Contact contact)
     {
         return personsRepository.save(contact.getPersons());
     }
 
     @PutMapping("Update/{id}")
-    private Persons update(@PathVariable int id, @RequestBody Persons persons){
+    public Persons update(@PathVariable int id, @RequestBody Persons persons){
         persons.setId(id);
         return personsService.Update(persons);
     }

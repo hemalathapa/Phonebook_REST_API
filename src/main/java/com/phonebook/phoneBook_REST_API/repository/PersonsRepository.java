@@ -1,6 +1,6 @@
-package com.phonebook.PhoneBook_REST_API.repository;
+package com.phonebook.phoneBook_REST_API.repository;
 
-import com.phonebook.PhoneBook_REST_API.model.Persons;
+import com.phonebook.phoneBook_REST_API.model.Persons;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Repository;

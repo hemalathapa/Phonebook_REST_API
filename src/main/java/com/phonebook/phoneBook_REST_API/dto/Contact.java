@@ -1,6 +1,6 @@
-package com.phonebook.PhoneBook_REST_API.dto;
+package com.phonebook.phoneBook_REST_API.dto;
 
-import com.phonebook.PhoneBook_REST_API.model.Persons;
+import com.phonebook.phoneBook_REST_API.model.Persons;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

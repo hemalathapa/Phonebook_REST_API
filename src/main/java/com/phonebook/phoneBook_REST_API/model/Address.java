@@ -1,4 +1,4 @@
-package com.phonebook.PhoneBook_REST_API.model;
+package com.phonebook.phoneBook_REST_API.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
