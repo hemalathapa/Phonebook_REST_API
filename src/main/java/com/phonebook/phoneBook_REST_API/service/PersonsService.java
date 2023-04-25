@@ -48,7 +48,7 @@ public class PersonsService {
 
     }
 
-    public Persons Update(Persons persons)
+    public Persons update(Persons persons)
     {
         return personsRepository.save(persons);
     }

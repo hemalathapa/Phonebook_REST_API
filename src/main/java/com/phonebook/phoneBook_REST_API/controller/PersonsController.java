@@ -39,7 +39,7 @@ public class PersonsController
     @PutMapping("Update/{id}")
     public Persons update(@PathVariable int id, @RequestBody Persons persons){
         persons.setId(id);
-        return personsService.Update(persons);
+        return personsService.update(persons);
     }
 
     @DeleteMapping("/delete/{id}")
