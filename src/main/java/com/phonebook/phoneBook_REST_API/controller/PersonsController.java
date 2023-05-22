@@ -48,8 +48,8 @@ public class PersonsController
     }
 
 
-    @DeleteMapping("/deleteByFnameAndLname")
-    public String deleteContactByName(@RequestParam String fname,@RequestParam String lname)
+    @DeleteMapping("/deleteByFnameAndLname/{fname}/{lname}")
+    public String deleteContactByName(@PathVariable String fname,@PathVariable String lname)
     {
         return personsService.deleteByFnameAndLname(fname,lname) + " Contact deleted !!";
     }
